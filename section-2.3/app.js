@@ -35,7 +35,7 @@ console.log(name);
 // const greeting;
 // console.log(greeting);
 
-// const used within arrays and objects . data inside can change but the data name it is assigned to
+// const used with arrays and objects . data inside can change but the data name it is assigned to
 // cannot change. even though we changed the data in the object, it is still that object
 
 const person = {
@@ -49,6 +49,6 @@ console.log(person);
 //or when working with arrays
 const numbers = [1,2,3,4,5];
 numbers.push(6);
-console.log(numbers); //-> the data was changed but the const 'numbers' doesnt have a completely new array
+console.log(numbers); //-> the data was changed but the const 'numbers' doesnt get assigned a completely new array
 
-//const can mutate ; using const lets programmers know that this value cannot be changed with a new set of values 
+//const can mutate ; by using const, programmers know that this value cannot be changed with a new set of values
