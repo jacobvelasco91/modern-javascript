@@ -44,3 +44,13 @@ document.body.innerHTML= html;
 function motto(motto){
   return motto;
 }
+
+var firstName = 'santos';
+var lastName = 'velasco';
+
+
+var htmlTemplate = `
+<h1>${firstName}</h1>
+<h2>${lastName}</h2>
+`;
+document.body.innerHTML = htmlTemplate;
