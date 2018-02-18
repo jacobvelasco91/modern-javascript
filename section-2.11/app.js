@@ -18,5 +18,3 @@ val = today.getMilliseconds(); //gets the current getMilliseconds
 val = today.getTime(); //getting the current time stamp amount of minutes since 1970
 
 console.log(val);
-
-birth

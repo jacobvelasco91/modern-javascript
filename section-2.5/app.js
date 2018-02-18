@@ -52,3 +52,13 @@ const sum = val1 + val2;
 
 console.log(sum); //-> changed the 6 to a string, because it was being added to a string
 console.log(typeof sum);
+
+
+//examples of trying to convert different types
+
+let string1 = "sentence";
+
+let val = Number(string1);
+
+val = String(string1);
+val = Boolean(string1);

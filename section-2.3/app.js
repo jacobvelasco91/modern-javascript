@@ -46,6 +46,14 @@ console.log(person);
 person.name = "santos";
 console.log(person);
 
+//another example of const
+
+const jacob = {
+  age:26,
+  hair:"black",
+  race:"mexican"
+}
+
 //or when working with arrays
 const numbers = [1,2,3,4,5];
 numbers.push(6);
