@@ -2,19 +2,27 @@
 let val;
 
 const today = new Date(); //Instanating todays date
-let birthday = new Date('11-13-1991');
-birthday = new Date('November 13 1991');
 
-//Get the current month
+val = today.getMonth(); //Month is zero based : so januarary is 0 and so on
+console.log(val);
 
-val = today.getMonth(); //it is zero based
-val = today.getDate(); //gets the date
-val = today.getDay(); //days of the week as numerical starting at sunday.
-val = today.getFullYear(); //gets just the current numerical year
-val = today.getHours(); //gets military hour
-val = today.getMinutes(); //gets the current minute time
-val = today.getSeconds(); //gets the current seconds in time
-val = today.getMilliseconds(); //gets the current getMilliseconds
-val = today.getTime(); //getting the current time stamp amount of minutes since 1970
+val = today.getDate();
+console.log(val); //->20
 
+val = today.getDay(); //Also zero based starting at sunday as 0
+console.log(val); //-> 2 which is tuesday
+
+val = today.getFullYear();
+console.log(val); //->2018
+
+val = today.getHours(); //this is military time hours
+console.log(val);
+
+val = today.getMinutes();
+console.log(val); //->shows the current time in minutes
+
+val = today.getMilliseconds();
+console.log(val); //-> shows the milli seconds
+
+val = today.getTime();
 console.log(val);

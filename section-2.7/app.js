@@ -11,6 +11,7 @@ let val;
 val = firstName + " " + lastName;
 val = firstName + " = " + lastName;
 
+
 //append ; adding to the same string
 val = 'Santos ';
 val += 'Velasco';
@@ -96,3 +97,67 @@ console.log(replaceName);
 
 
 console.log(val);
+
+
+//Practice
+
+//Concatenating
+let val1 = "santons";
+let val2 = "velasco";
+let word;
+
+word = val1 + val2;
+
+
+
+//appending
+word = 'super';
+word += ' hero';
+console.log(word); //super hero
+
+//Escaping characters
+word += ' goes to it\'s home.'; //escaped the single quote with a backslash
+console.log(word);
+
+//length property of a string
+console.log(word.length);
+
+//changing all letters to uppercase or lower case
+let upper = word.toUpperCase();
+console.log(upper);
+let lower = upper.toLowerCase();
+console.log(lower);
+
+//finding the position of a character
+let index = word.indexOf('h');
+console.log(index);
+index = word.lastIndexOf('h'); //starting from the right ; but still using proper index position
+console.log(index);
+
+//Looking at what character is at a specific position
+index = word.charAt('10');
+console.log(index); //-> a space between the words
+
+
+//getting a string from a string; a substring
+let substring = word.substring(6,14); //this is not including 14, if want include char, go one more
+console.log(substring); //->hero goe
+substring = word.substring(6,15);
+console.log(substring); //->hero goes
+
+
+//slicing
+
+let wordSlice = word.slice(6,15);
+console.log(wordSlice + ' ' + word);
+
+//Slicing and substring are very similar
+
+//replace
+let replace = word.replace('hero','man');
+console.log(word);
+
+//splitting
+
+let split1 = word.split(' ');
+console.log(split1);

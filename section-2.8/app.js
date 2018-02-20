@@ -45,12 +45,29 @@ function motto(motto){
   return motto;
 }
 
-var firstName = 'santos';
-var lastName = 'velasco';
+// // var firstName = 'santos';
+// // var lastName = 'velasco';
+//
+//
+// var htmlTemplate = `
+// <h1>${firstName}</h1>
+// <h2>${lastName}</h2>
+// `;
+// document.body.innerHTML = htmlTemplate;
 
+//Practicing Template Literals
 
-var htmlTemplate = `
-<h1>${firstName}</h1>
-<h2>${lastName}</h2>
+let firstName = prompt("Enter First Name","");
+let lastName = prompt("Enter Last Name", "");
+
+const htmlBlock =  `
+  <div style="width:100px;height:100px;margin:auto;">
+    <form method='post' action=index.html>
+    <input type="text" name="first" placeholder="${firstName}"">
+    <input type="text" name="last" placeholder="${lastName}">
+    <input type="submit" value="submit">
+    <form>
+  <div>
 `;
-document.body.innerHTML = htmlTemplate;
+
+document.write(htmlBlock);
