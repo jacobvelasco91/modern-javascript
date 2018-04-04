@@ -47,6 +47,7 @@ for (let i = 0; i <cars.length; i++) {
   console.log(cars[i]);
 }
 
+
 //FOR EACH
 //grab the array name and add  the for each
 //this forEach method takes a callback function
@@ -67,6 +68,32 @@ cars.forEach(function(car,x){
 cars.forEach(function(car,x,array){
   console.log(array);
 });
+
+const trips = ['america','mexico','spain','swizterland'];
+trips.forEach( (i,p) => {
+  console.log(`Places I would go according to perference ${p+1} : ${i}.`);
+});
+
+//books of bible, favorite bands, food i do not like, schools i have gone,
+//cities i have visited, places i want to visit
+
+let arrayLength;
+
+const bibleBooks = ['genesis','exodus','leviticus','deuturonamy','psalms','proverbs'];
+arrayLength = bibleBooks.length;
+bibleBooks.forEach(i => {console.log(i)});
+
+const favBands = ['ascend the hill','bethel','shane and shane','phil wickham','scott cunningham band','penny and sparrow','hillsong'];
+arrayLength = favBands.length;
+favBands.forEach( i => {console.log(i);});
+
+const foodNot = ['white asparagus','oyster','burnt food'];
+arrayLength = foodNot.length;
+foodNot.forEach( i => {console.log(i)});
+
+console.log(arrayLength);
+
+
 
 
 
