@@ -67,6 +67,17 @@ todo.delete();
 
 
 //declaring a function
+function goToSleep(){
+  console.log('going to sleep');
+}
+goToSleep();
+
+function sleeping(t){
+  return t - 8;
+}
+
+const sleepLeft = sleeping(12);
+console.log(sleepLeft);
 
 function func1() {
   console.log('hello world');
