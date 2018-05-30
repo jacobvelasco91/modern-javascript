@@ -59,6 +59,5 @@ val = listItem.nextElementSibling; //-> returned football because it was the nex
 //GET PREVIOUS SIBLING
 
 val = listItem.previousElementSibling; //-> nothing beause the first li doesnt have a previous
-val = list.children[3].previousElementSibling; //->Got cooking ,bc we 1st targeted researching 
-
-console.log(val)
+val = list.children[3].previousElementSibling; //->Got cooking ,bc we 1st targeted researching
+console.log(val);
