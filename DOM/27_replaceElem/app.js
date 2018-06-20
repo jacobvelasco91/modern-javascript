@@ -77,3 +77,27 @@ tag.classList.add('secondClass');
 tag.classList.remove('newClassName');
 
 console.log(input);
+
+const newFormHeading = document.createElement("h2");
+newFormHeading.id = "form-id";
+newFormHeading.appendChild(document.createTextNode("MAKE A DECISION"));
+
+const oldFormHeading = document.querySelector("#form-heading");
+const formParent = document.querySelector(".form1");
+
+formParent.replaceChild(newFormHeading,oldFormHeading);
+
+//remove the form header
+//grab the form header
+
+formParent.removeChild(formParent.children[0]);
+// or document.querySelector("#form-id").remove();
+
+//adding and replacing classes
+formParent.classList.add("form");
+formParent.classList.remove("form");
+
+
+
+
+console.log(formParent);
