@@ -6,7 +6,36 @@
     <meta name="author" content="Jacob Velasco">
     <meta name="description" content="A todo app">
     <title>Todo app</title>
+    <!-- CDN Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Poiret+One" rel="stylesheet">
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="./style.css" type="text/css">
   </head>
   <body>
+    <div id="main-card">
+      <div class="card-header">
+        <div class="logo">Jot</div>
+        <div class="date"></div>
+      </div>
+      <div class="search">
+        <input class="search-input" type="text" name="filter">
+        <div class="filter-focus-placeholder">Search</div>
+        <div class="underline"></div>
+      </div>
+      <div class="list-contain">
+        <ul id="tasks-list">
+        </ul>
+      </div>
+      <div class="task-contain-input">
+        <form class="task-input-form" action="index.html" method="get">
+          <input type="text" name="task" placeholder="task" autocomplete="off">
+          <input type="submit" name="submit-task" value="add Task">
+        </form>
+      </div>
+
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
