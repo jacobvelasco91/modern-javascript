@@ -10,11 +10,10 @@ body {
 
 /* CARD */
 #main-card {
-  width:25em;
-  height:25em;
+  width:50vw;
   margin: 1em auto;
   border-radius: 4px;
-  box-shadow: 0px 2px 15px rgba(0,0,0,.3);
+  box-shadow: 0px 3px 15px rgba(0,0,0,.2);
 }
 /*header of the card*/
 .card-header {
@@ -30,50 +29,4 @@ body {
   position:relative;
   float:right;
   font-family: 'Poiret One', cursive;
-}
-/* Filter Search */
-.search {
-  padding:1em 1.5em;
-  text-align:center;
-}
-.search input {
-  border:none;
-  padding:1em 2em;
-  width:70%;
-  font-family:inherit;
-}
-.underline {
-  width:70%;
-  height:1px;
-  background-color:lightgray;
-  margin:auto;
-  position:relative;
-  bottom:1em;
-  transition:.3s;
-}
-.search input:focus {
-  outline:none;
-
-}
-.filter-focus-placeholder {
-  margin:auto;
-  position:relative;
-  bottom:1.7em;
-  right:5em;
-  pointer-events: none;
-  color:lightgray;
-  transition:.3s;
-}
-.move {
-  animation-name: focusMove;
-  animation-duration: .5s;
-}
-@keyframes focusMove {
-  0% {
-
-  }
-  100% {
-    transform: translate(-10px 10px);
-    transform: scale(.5);
-  }
 }

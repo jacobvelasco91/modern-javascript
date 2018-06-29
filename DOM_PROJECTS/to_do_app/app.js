@@ -1,35 +1,57 @@
-//creating the current date
-const months = ['January','Febraury','March','April','May','June','July','August','September','October','November','December'];
-const dateObj = new Date();
-const cDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
-//creating the element to append to the date div
-const dateElement = document.createElement('h5');
-dateElement.appendChild(document.createTextNode(cDate)); //adding current date
-//retrieving the div element
-const dateDiv = document.querySelector('.date');
-dateDiv.appendChild(dateElement);
+/*** DOM VARIABLES ***/
+const date = document.getElementById('#date'); //date div
+const newTaskForm = document.querySelector('.task-form'); //task form
+const newTask =document.querySelector('.input-task'); //input tag
+const list = document.querySelector('#list'); // unordered list
+const clearTasks = document.querySelector('.clear-tasks');
+
+/*** Event listeners ***/
+newTaskForm.addEventListener('submit',addTask);
+list.addEventListener('click',removeTask); //event delagation to remove item
+clearTasks.addEventListener('click',clearAllTasks);
 
 
 
-//styling the search bar
 
-//grabing the main element to fire event delatgation
-const filter = document.querySelector('.search-input'); //filter box
-const underline = document.querySelector('.underline'); //underline
-const filterPlace = document.querySelector('.filter-focus-placeholder'); //placeholder
-filter.addEventListener('focusin',function(){
-  underline.style.backgroundColor = 'lightblue';
-  underline.style.boxShadow = '0px 1px 2px lightblue';
-  filterPlace.style.bottom = '4em';
-  filterPlace.style.right = '10.8em';
-  filterPlace.style.fontSize = '10px';
-  filterPlace.style.color = 'lightblue';
-});
-filter.addEventListener('focusout',function(){
-  underline.style.backgroundColor = 'lightgray';
-  underline.style.boxShadow = 'none';
-  filterPlace.style.bottom = '1.7em';
-  filterPlace.style.right = '5em';
-  filterPlace.style.fontSize = '16px';
-  filterPlace.style.color = 'lightgray';
-});
+/*** Functions ***/
+
+
+function addTask(e){
+  if (newTask.value === '') {
+    alert('enter a new task');
+  } else {
+  //create new li element w/ classes and child link(<a>) element
+  const li = document.createElement('li');
+  li.className = "list-item";
+  li.appendChild(document.createTextNode(newTask.value)); //appending input val
+  //create link with i inner html
+  const link = document.createElement('a');
+  link.className = 'delete-item second-content';
+  link.href = '#';
+  link.innerHTML = '<i class="fas fa-minus-circle"></i>';
+  //append the link to the li tag
+  li.appendChild(link);
+  //..Now append the newly created element to the list
+  list.appendChild(li);
+  /* set local storage*/
+
+
+  //then, clear the input field
+  newTask.value = '';
+  e.preventDefault(); //prevent default behavior of form submittal
+  }
+}
+
+function removeTask(e){
+  //make sure e.target is the delete icon
+  if (e.target.parentElement.classList.contains('delete-item')) {
+    //now delete the whole <li>
+    e.target.parentElement.parentElement.remove();
+  }
+}
+
+function clearAllTasks(){
+  while (list.firstChild){ //while loop faster; while true
+    list.removeChild(list.firstChild);
+  }
+}
