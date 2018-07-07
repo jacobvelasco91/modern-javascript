@@ -12,15 +12,17 @@ list.addEventListener('click',removeTask); //event delagation to remove item
 clearTasks.addEventListener('click',clearAllTasks);
 
 
-/*** Functions ***/
+/***** Functions *****/
+
+/*Load localStorage*/
 function loadTasks(){
-  let tasks;
-  if (localStorage.getItem('tasks') === null) {
+  let tasks; //declaring a variable
+  if (localStorage.getItem('tasks') === null) { //checking if LS has key:value
     tasks = []; //if there is no tasks key ; create an empty array
-  } else {
-    tasks = JSON.parse(localStorage.getItem('tasks')); //if key -> get then parse and shove into tasks ; it will become an array of things
+  } else { // else there is a key named 'tasks' , so retrieve the JSON info
+    tasks = JSON.parse(localStorage.getItem('tasks')); //retrieving then parsing
   }
-  // the 'task' parameter will pull the VALUE which we added
+  // the 'task' parameter will pull the VALUE in the array
   tasks.forEach(function(task){ //looping through array and creating & appending
     const li = document.createElement('li');
     li.className = "list-item";
@@ -34,10 +36,11 @@ function loadTasks(){
     li.appendChild(link);
     //..Now append the newly created element to the list
     list.appendChild(li);
-
-    //this should load all data from local storage
+    //this should loaded and displayed all data from local storage
   });
 }
+
+/* ADDING a NEW Task to UI & to localStorage */
 function addTask(e){
   if (newTask.value === '') {
     alert('enter a new task');
@@ -46,45 +49,50 @@ function addTask(e){
   const li = document.createElement('li');
   li.className = "list-item";
   li.appendChild(document.createTextNode(newTask.value)); //appending input val
-  //create link with i inner html
+  //create a 'link tag' with an 'i tag' as inner html
   const link = document.createElement('a');
   link.className = 'delete-item second-content';
   link.href = '#';
-  link.innerHTML = '<i class="fas fa-minus-circle"></i>';
+  link.innerHTML = '<i class="fas fa-minus-circle"></i>'; //vector icon
   //append the link to the li tag
   li.appendChild(link);
-  //..Now append the newly created element to the list
+  //..Now append the newly created list element to the list(ul)
   list.appendChild(li);
-  /* set local storage*/
-  setLocalStorage(newTask.value); //calling another function
+  /* set new task to local storage*/
+  setNewTaskToLS(newTask.value); //calling another function
   //then, clear the input field
   newTask.value = '';
   e.preventDefault(); //prevent default behavior of form submittal
   }
 }
-function setLocalStorage(task){
+
+/* setting a new task to localStorage */
+function setNewTaskToLS(task){
   let tasks; //define a variable
-  if (localStorage.getItem('tasks') === null) { //if no tasks KEY
-    tasks = []; // set tasks to an empty array
-  } else { //there is a KEY named 'tasks' , so we set tasks var to that
-    tasks = JSON.parse(localStorage.getItem('tasks')); //we parse the JSON data
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
   }
-  //add the new task to the tasks array
+  //add the 'task argument' to the current array
   tasks.push(task);
   //then set it back to local storage
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+/* Removing task item from UI and local storage */
 function removeTask(e){
   //make sure e.target is the delete icon
   if (e.target.parentElement.classList.contains('delete-item')) {
     //now delete the whole <li>
-    e.target.parentElement.parentElement.remove();
+    e.target.parentElement.parentElement.remove(); //from the i tag to li tag
     //remove from local storage as well
-    removeLocalStorage(e.target.parentElement.parentElement);
+    removeTaskLS(e.target.parentElement.parentElement);
   }
 }
-function removeLocalStorage(taskItem){
+
+/* function to remove from local storage */
+function removeTaskLS(taskItem){
   //retrieve/define localstorage variable
   let tasks;
   if (localStorage.getItem('tasks') === null) {
@@ -99,19 +107,20 @@ function removeLocalStorage(taskItem){
       tasks.splice(index,1); //grabbing the localStorage array and splicing of the CURRENT iteration
     }
   });
-  //then we set the tasks array back to local storage with its updates
+  //then we set the tasks array back to local storage with its updated
   localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
+/* clearing all tasks items in UI and LS*/
 function clearAllTasks(){
-  while (list.firstChild){ //while loop faster; while true
+  while(list.firstChild){
     list.removeChild(list.firstChild);
   }
-
   //clear all localStorage
   clearLS();
 
 }
+/* clearing the localStorage */
 function clearLS(){
   localStorage.clear();
 }
