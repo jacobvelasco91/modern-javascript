@@ -9,28 +9,35 @@
     <!-- CDN Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico|Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Poiret+One|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Poppins|Roboto:300,400" rel="stylesheet">
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="./style.css" type="text/css">
   </head>
   <body>
+    <header>
+      <h1>Simple.Clean.Jot</h1>
+    </header>
+    <main>
+    <h2 class="contain comment">A to do app which will allow you to save to your local storage on the device you are currently using.</h2>
     <div id="main-card">
-      <div class="header-contain">
-        <div class="logo">Jot</div>
-        <div id="date"></div>
+      <div class="header-card">
+        <div class="logo"><i class="fas fa-signature"></i><i class="fas fa-pencil-alt"></i>
+
+</div>
       </div>
-      <div class="new-task-contain">
+      <div class="input-contain">
         <form class="task-form" action="index.html" method="get">
           <input class ="input input-task" type="text" name="task" placeholder="task" autocomplete="off">
         </form>
       </div>
-      <div class="filter-contain">
-        <div><i class="fas fa-search"></i>
-        <input class="input input-filter"type="text" name="filter" autocomplete="off"></div>
-      </div>
       <div class="taskList-contain">
         <ul id="list">
         </ul>
+      </div>
+      <div class="input-contain">
+        <div><i class="fas fa-search"></i>
+        <input class="input input-filter"type="text" name="filter" autocomplete="off"></div>
       </div>
       <div class="clear-contain">
         <div class="clear-tasks">
@@ -38,6 +45,7 @@
         </div>
       </div>
     </div>
+  </main>
     <script src="app.js"></script>
   </body>
 </html>

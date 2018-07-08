@@ -4,12 +4,14 @@ const newTaskForm = document.querySelector('.task-form'); //task form
 const newTask = document.querySelector('.input-task'); //input tag
 const list = document.querySelector('#list'); // unordered list
 const clearTasks = document.querySelector('.clear-tasks');
+const filter = document.querySelector('.input-filter'); //filter input box
 
 /*** Event listeners ***/
 document.addEventListener('DOMContentLoaded', loadTasks);
 newTaskForm.addEventListener('submit',addTask);
 list.addEventListener('click',removeTask); //event delagation to remove item
 clearTasks.addEventListener('click',clearAllTasks);
+filter.addEventListener('keyup',filterTasks);
 
 
 /***** Functions *****/
@@ -123,4 +125,24 @@ function clearAllTasks(){
 /* clearing the localStorage */
 function clearLS(){
   localStorage.clear();
+}
+
+/* Search Filter */
+function filterTasks(){
+  //get the search filter value
+  let filterText = filter.value.toLowerCase(); //each keyup, getting search val..then toLowerCase
+  //then get all the list element innerText values into an array
+  const listItems = document.querySelectorAll('.list-item');
+  //iterate through each item
+  listItems.forEach(function(item){
+    let innerText = item.innerText;
+    //as each keyup value is being entered, it will be what checks each innerText of the list items
+    //if it DOES NOT MATCH it will give a -1 , which will result in display being none, no showed
+    if (innerText.toLowerCase().indexOf(filterText) != -1 ) {
+      item.style.display = 'block';
+    } else { //if there wasnt a match
+      item.style.display = 'none';
+    }
+  });
+
 }
