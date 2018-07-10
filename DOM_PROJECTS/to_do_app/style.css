@@ -43,13 +43,7 @@ main {
   margin: auto;
   border-radius: 4px;
   background-color:white;
-  transition: .3s;
   overflow: hidden;
-}
-#main-card:hover {
-  position:relative;
-  transform: translateY(-2px);
-  box-shadow: 0px 3px 10px rgba(0,0,0,.3);
 }
 /*header of the card*/
 .header-card {
@@ -97,17 +91,19 @@ main {
 .clear-tasks {
   font-family: 'Roboto' ,sans-serif;
   font-weight: 300;
-  font-size: 1em;
+  font-size: .7em;
   text-align: center;
   width:9em;
   padding:.5em;
   margin:auto;
   border-radius:5px;
-  background-color: rgba(188, 78, 156, .8);
+  background-color: lightgray;
   color:white;
   cursor: pointer;
+  transition:.3s;
 }
 .clear-tasks:hover {
+  box-shadow:0px 1px 5px rgba(0,0,0,.5);
   background-color:#f80759;
 }
 
@@ -125,23 +121,43 @@ main {
   padding:1em .5em;
   background-color: rgba(188, 78, 156, .2);
   position:relative;
-  transform: translateX(-40em);
+  transform: translateY(.5em);
   animation-name: new-item;
-  animation-duration: .5s;
+  animation-duration: .6s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+  opacity:1;
 }
 @keyframes new-item {
   0% {
-    transform: translateX(-40em);
+    transform: translateY(.5em);
+    opacity:0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity:1;
+  }
+}
+.delete-list-item {
+  animation-name: delete-item;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-out;
+}
+@keyframes delete-item {
+  0%{
+    transform:translateX(0);
+    opacity:1;
+  }
+  100%{
+    transform: translateX(-20em);
+    opacity:0;
   }
 }
 .list-item:nth-child(even) {
   background-color: rgba(188, 78, 156, .4);
 }
+
 .second-content {
   position:relative;
   float:right;
