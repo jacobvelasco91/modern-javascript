@@ -20,21 +20,21 @@ body {
   color:white;
   font-size:16px;
   text-transform: uppercase;
-  padding:2em 0;
+  padding:1em 0;
 }
 
 /*  HEADER */
 header {
 }
 header h1 {
-  padding:1em 1em;
+  padding:.5em 1em;
   font-family: 'Roboto', sans-serif;
   font-weight:300;
 }
 /* MAIN */
 main {
   background: linear-gradient(to left,#bc4e9c,#f80759 );
-  padding:3em 0 ;
+  padding:2em 0 ;
 }
 
 /* CARD */
@@ -42,8 +42,14 @@ main {
   width:70vw;
   margin: auto;
   border-radius: 4px;
-  box-shadow: 0px 3px 10px rgba(0,0,0,.3);
   background-color:white;
+  transition: .3s;
+  overflow: hidden;
+}
+#main-card:hover {
+  position:relative;
+  transform: translateY(-2px);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.3);
 }
 /*header of the card*/
 .header-card {
@@ -62,8 +68,12 @@ main {
 
 /* INPUT STYLING */
 .input-contain {
+  height:auto;
   padding:1em;
   text-align: center;
+}
+.task-form {
+  height:3em;
 }
 .input {
   width:50%;
@@ -75,12 +85,16 @@ main {
 }
 .input:focus {
   outline: none;
-
+  border-bottom:2px solid #f80759;
 }
+.search {
+  height:3em;
+}
+/* CLEAR BUTTON*/
 .clear-contain {
   padding:1em 0;
 }
-.clear-tasks h3 {
+.clear-tasks {
   font-family: 'Roboto' ,sans-serif;
   font-weight: 300;
   font-size: 1em;
@@ -89,14 +103,18 @@ main {
   padding:.5em;
   margin:auto;
   border-radius:5px;
-  background-color: #f80759;
+  background-color: rgba(188, 78, 156, .8);
   color:white;
   cursor: pointer;
+}
+.clear-tasks:hover {
+  background-color:#f80759;
 }
 
 /* LIST STYLING */
 .taskList-contain {
-  width:70%;
+  width:80%;
+  height:auto;
   margin:auto;
 }
 #list{
@@ -106,6 +124,20 @@ main {
   font-size: 1.2em;
   padding:1em .5em;
   background-color: rgba(188, 78, 156, .2);
+  position:relative;
+  transform: translateX(-40em);
+  animation-name: new-item;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes new-item {
+  0% {
+    transform: translateX(-40em);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .list-item:nth-child(even) {
   background-color: rgba(188, 78, 156, .4);
@@ -114,4 +146,8 @@ main {
   position:relative;
   float:right;
   color:#f80759;
+  transition:.5s;
+}
+.second-content:hover {
+  transform: rotate(180deg);
 }
