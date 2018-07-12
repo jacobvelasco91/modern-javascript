@@ -90,10 +90,10 @@ function removeTask(e){
     e.target.parentElement.parentElement.classList.add('delete-list-item');
     //now delete the whole <li> after the animation ends
     if (e.target.parentElement.parentElement.classList.contains('delete-list-item')) {
-      e.target.parentElement.parentElement.addEventListener('animationend',function(){ e.target.parentElement.parentElement.remove()});
+      e.target.parentElement.parentElement.addEventListener('animationend',function(){ e.target.parentElement.parentElement.remove()}); //rmoved from UI
     }
 
-    //remove from local storage as well
+    //Now, remove from local storage as well
     removeTaskLS(e.target.parentElement.parentElement);
   }
 }
