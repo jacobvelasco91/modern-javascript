@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+body {
+  font-family: 'Markazi Text', serif;
+}
+/* MAIN CARD */
+#main-card {
+  width:70%;
+  height:auto;
+  margin:1em auto;
+  box-radius:4px;
+  box-shadow:0px 1px 5px rgba(0,0,0,.5);
+}
+.header {
+  text-align:center;
+  padding:.5em 0;
+}
+.header h2 {
+  color:gray;
+}
+.form-box {
+  text-align: center;
+  background-color:lightgray;
+  padding-bottom: .5em;
+}
+.input {
+  width:50%;
+  height:auto;
+  margin: auto;
+  padding:.5em 0;
+}
+.span {
+  background-color: gray;
+  border-radius:3px 3px 0px 0px;
+}
+.input input {
+  display:block;
+  width:100%;
+  text-align: center;
+  padding: 1em 0;
+  color:gray;
+}
+.form-box input[name="submit"]{
+ width:30%;
+ padding:.5em;
+}
+/* error message */
+.error {
+  border:1px solid darkred;
+  background-color: pink;
+  text-align:center;
+}
+
+/* results */
+#results-box {
+  width:60%;
+  margin:auto;
+}
+/* Loader*/
+.loader{
+  display:none;
+  padding:5em 0 ;
+  text-align: center;
+}
+.results {
+  display: none;
+}
+.result-item {
+  padding:1em 0;
+}
+.result-item fieldset {
+  padding:.5em 0;
+  color:gray;
+  border-radius:5px;
+}
+legend {
+  padding:0 .2em;
+}
+.result-item input {
+  display: block;
+  text-align: center;
+  margin:auto;
+  padding:.5em;
+  width:70%;
+  font-size:1.1em;
+}

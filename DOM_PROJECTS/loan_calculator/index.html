@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="author" content="Jacob Velasco">
+  <meta name="description" content="Home Loan Calculator">
+  <meta name="keywords" content="home,loan,calculator,fixed,percentage">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Calculator</title>
+  <link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <!-- Google fonts CDN -->
+  <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+</head>
+<body>
+  <div id="main-card">
+    <div class="header"><h2>Loan Calculator</h2></div>
+    <div class="form-box">
+      <form class="form">
+        <div class="input">
+          <div class="span"><span>$</span></div><input type="number" step=".01" name="loan" placeholder="Loan amount">
+        </div>
+        <div class="input">
+          <div class="span"><span>%</span></div><input type="number" step=".01" name="percentage" placeholder="Interest">
+        </div>
+        <div class="input">
+          <input type="number"  name="years" placeholder="Years to repay">
+        </div>
+        <input type="submit" name="submit" value="calculate">
+      </form>
+    </div>
+    <div id="results-box">
+      <div class="loader">
+        <img src="./images/loader.gif" alt="loader">
+      </div>
+      <div class="results">
+      <div class="result-item">
+        <fieldset>
+          <legend>Monthyl payment</legend>
+          <input type="number" name="monthlyPay" disabled>
+        </fieldset>
+      </div>
+      <div class="result-item">
+        <fieldset>
+          <legend>Total Payed</legend>
+          <input type="number" name="totalPay" disabled>
+        </fieldset>
+      </div>
+      <div class="result-item">
+        <fieldset>
+          <legend>Total Interest Payed</legend>
+          <input type="number" name="totalInt" disabled>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
