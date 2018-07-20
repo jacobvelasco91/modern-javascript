@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Jacob Velasco">
+  <meta name="description" content="a number guesser game">
+  <meta name="keywords" content="game,code,html,css,javascript">
+  <!-- CSS stylesheet-->
+  <link rel="stylesheet" href="./style.css">
+  <title>Guess Number!</title>
+  <!-- FONT AWESOME CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <!-- GOOGLE FONTS CDN -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+</head>
+<body>
+  <div id="game-contain">
+    <div class="game-box">
+      <section class="title">
+        <h2><i class="fas fa-gamepad"></i></h2>
+        <p>Go ahead, try and guess my number between <span class="min-num"></span> and <span class="max-num"></span></p>
+      </section>
+      <section class="game-message"><p></p></section>
+      <section class="game-input">
+        <div class="number-guess-box">
+          <input type="number" name="number-guess" placeholder="Enter your number">
+        </div>
+        <input type="submit" name="submit-btn" value="guess">
+      </section>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

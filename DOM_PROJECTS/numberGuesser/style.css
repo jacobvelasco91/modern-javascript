@@ -1,0 +1,91 @@
+* {
+  box-sizing:border-box;
+  padding:0;
+  margin:0;
+}
+body {
+  background-color: #B9BAC5;
+}
+
+/*game section*/
+#game-contain {
+  padding:10em 0;
+}
+.game-box {
+  width:50%;
+  height:auto;
+  margin:auto;
+  padding:3em 3em;
+  background-color:white;
+  border-radius:5px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.5);
+}
+/*title head*/
+.title {
+  text-align: center;
+  padding-bottom: 2em;
+}
+.title h2 {
+  font-size:3em;
+  color:#7427F1;
+  padding-bottom:.5em;
+}
+.title i {
+  transition-timing-function: ease-in-out;
+  transition: 1s;
+}
+.title p {
+  font-family: 'Montserrat', sans-serif;
+}
+/* GAME MESSAGE */
+.game-message  {
+  padding:.2em 0;
+  text-align: center;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 300;
+}
+.game-message {
+  font-size:.9em;
+}
+
+/* Number guess input */
+.number-guess-box {
+  padding:2em 0;
+}
+section input[name="number-guess"] {
+  display: block;
+  width:30%;
+  margin:auto;
+  border:none;
+  border-bottom:1px solid lightgray;
+  font-size:.9em;
+  padding:.8em;
+  color:gray;
+  text-align: center;
+
+}
+section input[name="number-guess"]:focus {
+  outline: none;
+}
+/* Number guess button*/
+section input[name="submit-btn"] {
+  display: block;
+  cursor: pointer;
+  width:70%;
+  margin:auto;
+  font-size:1em;
+  padding:.5em 0;
+  color:white;
+  text-transform: uppercase;
+  background-color:#7427F1;
+  border:none;
+}
+section input[name="submit-btn"]:hover {
+  background-color: #6531D9;
+}
+section input[name="submit-btn"]:focus {
+  outline:none;
+}
+section input[name="submit-btn"]:active {
+  background-color: #7427F1;
+}
