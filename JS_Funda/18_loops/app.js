@@ -112,7 +112,7 @@ const users = [
   {id:3,name:'Kelly'}
 ];
 
-//create an array of the id's for these users
+//create an array of the the names for these users
 //One of the things map does is pull out an array. give it an iterator to loop through
 const ids = users.map(function(user){
   return user.name;
