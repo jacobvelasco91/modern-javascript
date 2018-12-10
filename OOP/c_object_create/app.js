@@ -1,6 +1,8 @@
 /* OBJECT.CREATE ()*/
 /*
   We can use object.create to create prototype objects inside another object
+
+  So, say you craeting a new object which has no prototype functions. You can then use object.create() to basically create a new object FROM another object which would act as the Constructor.
 */
 
 //create an object that is an prototype , fill with methods
@@ -18,8 +20,3 @@ jacob.firstName = 'jacob';
 jacob.LastName = 'velasco';
 
 console.log(jacob.greeting());
-
-/*
-  The purpose of Object.create() is that you are able to add prototypes from other objects to the new/current object that you are working.
-
-*/

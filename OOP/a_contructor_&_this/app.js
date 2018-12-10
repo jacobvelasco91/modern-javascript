@@ -18,6 +18,7 @@ We will understand the fundamentals of the function constructor and the the 'thi
 //   this.name = name;
 //   console.log(this);
 // };
+// CONSTRUCTOR FUNCTION PROPERTIES MUST END WITH A SEMICOLOR
 
 //instantiating an object from Person
 // const jj = new Person('jacob');
@@ -76,3 +77,24 @@ const chevy = new Car('chevy','silverado','blue');
 
 
 console.log(chevy.presentation);
+
+
+//Practice 12/7/18
+
+//creating a dog constructor
+function Dog(breed,color,size){
+  this.breed = breed;
+  this.color = color;
+  this.size = size;
+  this.fly = function(){
+    return (this.weight <= 25)? "Yes, Fly": "No Fly";
+  }
+}
+//creating a Dog instance
+let dog = new Dog('husky','gray/black',30);
+let dog_object; //a variable
+
+dog_object = dog.fly(); // returns 'No Fly'
+dog_object = dog; //returns the created dog object
+
+console.log(this)
