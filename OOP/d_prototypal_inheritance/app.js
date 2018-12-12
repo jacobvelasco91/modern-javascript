@@ -134,3 +134,40 @@ const child = new Child('hispanic','spanish','highschool');
 //console.log both the object and access the inherited method
 console.log(child);
 console.log(child.origin());
+
+//Exercise 12/11/18
+
+//Dog super class
+
+function Dog(breed,weight) {
+  this.breed = breed;
+  this.weight = weight;
+  this.size = (this.weight <= 20)? 'Small' : 'Large';
+}
+Dog.prototype.bark = function(){
+  return `I am a ${this.size} ${this.breed} Dog!`;
+}
+
+doggy1 = new Dog('husky',20);
+
+console.log(doggy1);
+console.log(doggy1.bark());
+
+//Dog subclass
+function Husky(breed,weight,region,color){
+  Dog.call(this,breed,weight);
+  this.region = region;
+  this.color = color;
+}
+Husky.prototype = Object.create(Dog.prototype); //inherit protoype from Dog
+Husky.prototype.constructor = Husky; //Set the constructor of Husky to Husky (before it was Dog)
+
+
+const husky1 = new Husky('alaskanHusky',30,'alaska','gray/white');
+Husky.prototype.bark = function(){
+  return `I am a beautiful ${this.color} ${this.breed}, living in ${this.region}`;
+} //Overriding the bark function .
+
+
+console.log(husky1);
+console.log(husky1.bark());
