@@ -26,7 +26,33 @@ class Car {
   presentCar(){
     return `You have a ${this.make} ${this.model}`;
   }
+
+  /*
+    Below is a static method. a static method is used by the defining class (Car.addnumbers). Every instance of Car WILL NOT be able to refer to static methods. Functions inside a class are supposed
+    to have 'this.something' to change or add things to the class. If it doesnt, then it just becomes a static function.
+  */
+  static addnumbers(x,y){
+    return x + y;
+  }
 }
 
 const myCar = new Car('honda','civic');
 console.log(myCar.presentCar());
+
+
+//Exercise 12/14/18
+
+//create a Dog class
+class Dog {
+  constructor(breed,weight){
+    this.breed = breed;
+    this.weight = weight;
+  }
+  bark(){
+    return `I am a ${this.breed}!`;
+  }
+}
+
+const dog1 = new Dog('husky',23);
+
+console.log(dog1.bark());
