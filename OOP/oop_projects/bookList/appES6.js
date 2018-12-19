@@ -52,8 +52,9 @@ class UI {
 class Store {
   static getBooks(){
     let books;
-    if (localStorage.getitem('books') == null) {
+    if (localStorage.getItem('books') == null) {
       books = [];
+      console.log('hello world from LS');
     } else {
       books = JSON.parse(localStorage.getItem('books'));
     }
@@ -61,9 +62,9 @@ class Store {
   }
   static displayBooks(){
     const books = Store.getBooks();
+    const ui = new UI();
     books.forEach(function(book){
-      const ui = new UI();
-      ui.addBook(book);
+      ui.addBookToList(book);
     });
   }
   static addBook(book){
@@ -71,11 +72,12 @@ class Store {
     books.push(book);
     localStorage.setItem('books',JSON.stringify(books));
   }
-  static removeBook(isbn){ //using the books isbn to remove
+  static removeBookLs(isbn){ //using the books isbn to remove
     let books = Store.getBooks();
+    console.log(typeof isbn);
     books.forEach(function (book,index){
-      if (books.isbn == isbn ) {
-        books.splice(index,1); // w/splice original array IS AFFECTED
+      if(book.isbn === isbn){
+        books.splice(index,1);
       }
     });
     localStorage.setItem('books',JSON.stringify(books));
@@ -103,9 +105,10 @@ form.addEventListener('submit',function(e){
     //Grab form values ; make book object
     const book = new Book(title,author,isbn)
     ui.addBookToList(book); //adding book to list
+    Store.addBook(book); // adding book to local storage
     ui.clearFields(); //clearing the form fields
     ui.alertMsg('Book added successfully','success');
-  
+
     //prevent default of a form submittal
     e.preventDefault();
   }
@@ -116,5 +119,13 @@ document.querySelector('#book-list').addEventListener('click',function(e){
   if(e.target.classList.contains('delete')){
     const ui = new UI();
     ui.removeBook(e.target);
+    Store.removeBookLs(e.target.parentElement.previousElementSibling.innerText);
+    ui.alertMsg('Book Removed from List','success');
+
   }
+});
+
+//Page loads, books are checked in local storage and displayed
+document.addEventListener('DOMContentLoaded',function(){
+  Store.displayBooks();
 });
