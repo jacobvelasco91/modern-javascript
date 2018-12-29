@@ -1,5 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body></body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jacob Velasco">
+    <meta name="description" content="a to do list app operating in OOP">
+    <meta name="keywords" content="objects,programming,javascript,html,css">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <title>OOP todo List</title>
+    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  </head>
+  <body>
+    <section id="section_one">
+      <div class="todo_box">
+        <form id="form" >
+          <input type="text" name="task" placeholder="task" autocomplete="off">
+        </form>
+        <div class="task_list_box">
+          <ul>
+            <!-- <i class="fas fa-circle"></i> -->
+            <li><a title="complete" href="#"><i class="far fa-circle"></i></a>Dummy Task<a title="delete" href="#"><i class="far fa-trash-alt"></i></a></li>
+          </ul>
+        </div>
+        <div class="clear_task_list_box">
+          <a href="#"><h3>Clear all Tasks</h3></a>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
 </html>
