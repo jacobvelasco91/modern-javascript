@@ -1,18 +1,33 @@
-function Task(){
-  this.task;
+//task class
+class Task {
+  constructor(taskItem){
+    this.taskItem = taskItem;
+  }
 }
-Task.prototype.setTask = function(){
-  this.task = document.querySelector('input[name="task"]').value;
-  console.log(this.task);
+//UI class
+class UI {
+  displayTasks(task){
+    const list = document.querySelector('ul');
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.setAttribute('title','delete');
+    a.setAttribute('href','#');
+    a.innerHTML = '<i class="far fa-trash-alt"></i>';
+    li.appendChild(document.createTextNode(task.taskItem));
+    li.appendChild(a);
+    list.appendChild(li);
+  }
 }
-//Listen for the task form sumbit
-let task_input = document.querySelector('#form');
 
-task_input.addEventListener("submit",function(e){
-  const task = new Task();
-  task.setTask();
+
+
+
+let inputForm = document.querySelector('#form');
+//listen for form submital
+inputForm.addEventListener('submit',function(e){
+  let input = document.querySelector('input[name="task"]').value;
+  const task = new Task(input);
+  const ui = new UI();
+  ui.displayTasks(task);
   e.preventDefault();
 });
-
-
-console.log('hello');
