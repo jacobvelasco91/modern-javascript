@@ -1,61 +1,107 @@
-//task class
+//User Interface class
+function UI(){
+}
+UI.prototype.alert = function(type){
+  let form = document.querySelector('.form');
+  let div = document.createElement('div');
+  div.className = `alert ${type}`;
+  type == "success"? div.innerHTML = "<h6>sucessfully added task</h6>" : div.innerHTML = "<h6>error</h6>";
+  form.appendChild(div);
+  setTimeout(function(){ document.querySelector('.alert').remove()},2000);
+}
+UI.prototype.addTask = function(task){
+  let list = document.querySelector('ul');
+  let list_item = document.createElement('li')
+  list_item.className = "item";
+  list_item.innerHTML = `<a class="complete" href="#"><i class="fas fa-circle"></i></a>${task.taskValue}<span><a class="update" href="#"><i class="fas fa-pencil-alt"></i></a><a class="delete" href="#"><i class="fas fa-trash"></i></a></span>`;
+  list.appendChild(list_item);
+}
+UI.prototype.deleteTask = function(e){
+  e.target.parentElement.parentElement.parentElement.remove();
+}
+UI.prototype.clearField = function(){
+  document.querySelector('input[name="task"]').value = '';
+}
+UI.prototype.completeTask = function(e,task){
+  task.completed == true ? e.target.parentElement.parentElement.style.opacity = .5 : e.target.parentElement.parentElement.style.opacity = 1;
+}
+UI.prototype.edit = function(e){
+  let current_list_item_tag = e.target.parentElement.parentElement.parentElement;
+  let list_item_value = current_list_item_tag.textContent;
+  //iterate through tag and remove all children
+  while(current_list_item_tag.firstChild){
+    current_list_item_tag.removeChild(current_list_item_tag.firstChild);
+  }
+  //create an input element and add link to save the edit
+  let textarea = document.createElement('textarea');
+  textarea.appendChild(document.createTextNode(list_item_value));
+  //create a link to add at the end of the li
+  let link = document.createElement('a');
+  link.className = "updating";
+  //create icon
+  let icon = document.createElement('i');
+  icon.className ="fas fa-pencil-alt";
+  link.appendChild(icon);
+  current_list_item_tag.appendChild(textarea);
+  current_list_item_tag.appendChild(link);
+}
+
+
+
+//Task item class
 class Task {
-  constructor(taskItem){
-    this.taskItem = taskItem;
+  constructor(taskV,complete){
+    this.taskValue = taskV;
+    this._completed = complete;
   }
-}
-//UI class
-class UI {
-  displayTasks(task){
-    const list = document.querySelector('ul');
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.className = 'delete';
-    a.setAttribute('title','delete');
-    a.setAttribute('href','#');
-    a.innerHTML = '<i class="far fa-trash-alt"></i>';
-    li.appendChild(document.createTextNode(task.taskItem));
-    li.appendChild(a);
-    list.appendChild(li);
+  get completed(){
+    return this._completed;
   }
-  deleteTask(target){
-    target.parentElement.parentElement.remove();
+  set completed(bool){
+    this._completed = bool;
   }
-  deleteAll(){
-    let list = document.querySelector('.task_list_box ul');
-    let lis = document.querySelectorAll('li');
-    console.log(lis.firstChild);
-  }
+
 }
 
-
-const inputform = document.querySelector('#form');
-let taskValue;
-const ui = new UI();
-let list = document.querySelector('.task_list_box');
+//variables
+let form = document.querySelector('.form');
+let list_container = document.querySelector('.list-container');
+const list =[];
 
 /* EVENT LISTENERS */
 
-// form/input
-inputform.addEventListener('submit',function(e){
-  taskValue = document.querySelector('input[name="task"]').value;
-  const task = new Task(taskValue);
-  ui.displayTasks(task);
+//Hear for form input
+form.addEventListener('submit',function(e){
+  let taskValue = document.querySelector('input[name="task"]').value;
+  const ui = new UI();
 
+  if (taskValue == '') {
+    ui.alert('error');
+  } else {
+    const task = new Task(taskValue,false);
+    ui.addTask(task);
+    ui.alert('success');
+    ui.clearField();
+    list.push(task);
+  }
   e.preventDefault();
 });
 
-//delete button
-list.addEventListener('click',function(e){
-  if (e.target.parentElement.classList.contains('delete')) {
-   const ui = new UI();
-   ui.deleteTask(e.target);
-  }
-  console.log(e.target);
-});
-
-//clear all tasks
-document.querySelector('.delete_all').addEventListener('click',function(e){
+//Hear on the List and use event delegation
+list_container.addEventListener('click',function(e){
   const ui = new UI();
-  ui.deleteAll();
+  if (e.target.parentElement.className == 'delete') {
+    ui.deleteTask(e);
+  } else if (e.target.parentElement.className == 'complete') {
+    var value = e.target.parentElement.parentElement.textContent;
+    list.forEach(function(obj){
+      if (obj.taskValue == value) {
+        obj.completed == false ? obj.completed = true : obj.completed = false;
+        ui.completeTask(e,obj);
+      }
+    });
+
+  } else if (e.target.parentElement.className == 'update') {
+      ui.edit(e);
+  }
 });

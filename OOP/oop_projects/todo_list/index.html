@@ -1,33 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="author" content="Jacob Velasco">
-    <meta name="description" content="a to do list app operating in OOP">
-    <meta name="keywords" content="objects,programming,javascript,html,css">
-    <link rel="stylesheet" href="./style.css" type="text/css">
-    <title>OOP todo List</title>
-    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <meta name="description" content ="to-list">
+    <meta name="keywords" content="javascript">
+    <title>todo-list 2.0</title>
+    <link href="./style.css" rel="stylesheet">
+    <!-- SKELETON CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+    <!-- font awesome cdn -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
   <body>
-    <section id="section_one">
-      <div class="todo_box">
-        <form id="form" >
-          <input type="text" name="task" placeholder="task" autocomplete="off">
-        </form>
-        <div class="task_list_box">
-          <ul>
-            <!-- <i class="fas fa-circle"></i> -->
-            <li>Dummy Task<a class="delete" title="delete" href="#"><i class="far fa-trash-alt"></i></a></li>
-          </ul>
-        </div>
-        <div class="clear_task_list_box">
-          <a class="delete_all" href="#"><h3>Clear all Tasks</h3></a>
-        </div>
-      </div>
-    </section>
+    <div>
+      <form class="form">
+        <input type="text" name="task" placeholder="enter task..." autocomplete="off">
+        <input type="submit" name="submit">
+      </form>
+      <div class="list-container">
+        <ul>
 
+        </ul>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
