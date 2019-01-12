@@ -34,16 +34,24 @@ UI.prototype.edit = function(e){
   }
   //create an input element and add link to save the edit
   let textarea = document.createElement('textarea');
+  textarea.id = 'edit';
   textarea.appendChild(document.createTextNode(list_item_value));
   //create a link to add at the end of the li
   let link = document.createElement('a');
   link.className = "updating";
+  link.setAttribute('href','#');
   //create icon
   let icon = document.createElement('i');
   icon.className ="fas fa-pencil-alt";
   link.appendChild(icon);
   current_list_item_tag.appendChild(textarea);
   current_list_item_tag.appendChild(link);
+}
+UI.prototype.update = function(e){
+  let content = document.querySelector('#edit').value;
+  const task = new Task(content,false);
+  e.target.parentElement.parentElement.remove();
+  this.addTask(task);
 }
 
 
@@ -103,5 +111,8 @@ list_container.addEventListener('click',function(e){
 
   } else if (e.target.parentElement.className == 'update') {
       ui.edit(e);
+  }
+  else if (e.target.parentElement.className == 'updating') {
+    ui.update(e);
   }
 });
