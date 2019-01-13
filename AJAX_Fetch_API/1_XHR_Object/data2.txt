@@ -1,0 +1,1 @@
+This is AJAX call #2 including other methods shown in the console.
