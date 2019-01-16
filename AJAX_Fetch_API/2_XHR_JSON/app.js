@@ -5,7 +5,7 @@ here we are still working with AJAX and XMLHttpRequest
 
 JSON is just a string in javascript object literal syntax
 ---> JSON properties HAVE TO BE IN DOUBLE QUOTES
----> JSON property values if numbers CAN NOT HAVE SPACES
+---> JSON property value numbers CAN NOT HAVE SPACES
 
 convert from JSON object into native JS object : JSON.parse()
 convert from native JS to JSON object: JSON.stringify()
@@ -34,7 +34,7 @@ function addCustomer(){
 function addCustomers(){
   const xhr = new XMLHttpRequest();
   xhr.open("GET","customers.json",true);
-  /*expecting JSON response type, setting it will set convert the json data into a native object and place in xhr.response property*/
+  /*expecting JSON in the response,so setting the responseType will convert the json data into a native object and place it in the xhr.response property*/
   xhr.responseType = "json";
   xhr.send();
   xhr.onload = function(){
