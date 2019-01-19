@@ -1,0 +1,41 @@
+* {
+  padding:0;
+  margin:0;
+}
+body {
+  font-family: 'Staatliches', cursive;
+}
+header {
+  padding:3em 0;
+  text-align: center;
+  background-color:lightgray;
+}
+#generator {
+  padding:1em 2em;
+  font-family:inherit;
+  border:none;
+  font-size:1.2em;
+  border-radius:5px;
+  background-color: lightgray;
+}
+#generator:hover {
+  color:white;
+  background-color:black;
+  box-shadow: 0 2px 3px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+#generator:focus {
+  outline: none;
+}
+#hero {
+width:85vw;
+margin:0 auto;
+}
+form div {
+  width:50%;
+  margin:0 auto;
+  text-align: center;
+}
+#number {
+  width:40px;
+}

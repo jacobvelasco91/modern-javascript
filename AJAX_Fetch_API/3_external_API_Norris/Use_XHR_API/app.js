@@ -1,5 +1,5 @@
 /*
-Fetching data from an external api using AJAX
+Fetching data from an external api using AJAX w/ the XMLHttpRequest API 
 
 Every API is different. The type of request it takes or GET , or POST...How it will repond
 
