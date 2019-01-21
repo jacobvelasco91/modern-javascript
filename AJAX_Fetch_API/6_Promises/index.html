@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jacob Velasco">
+    <meta name="keywords" content="webdev app, promises">
+    <title>Promises</title>
+  </head>
+  <body>
+    <h1>Promises</h1>
+    <h3>promises are an ALTERNATIVE to callbacks for handling asynchronous programming</h3>
+    <h4>Notes on promises</h4>
+    <ul>
+      <li>Promises are a pattern that greatly simplifies asynchronous programming by making the code look synchronous and avoid problems associated with callbacks</li>
+      <li>A promise is an object that is used as a placeholder for the eventual results of a deffered program computation</li>
+      <li>A promise is a container for a future value</li>
+      <li>we create a promise when a certain task completion is uncertain or its takes too long</li>
+      <li>The parameters conventionally named resolve and reject, mark successful and unsuccessful eventual completion of the executor function, respectively.</li>
+      <li>All Promise instances have a .then() method on them.</li>
+      <li>.then() accepts two callbacks. The first callback is invoked when the promise is resolved. The second callback is executed when the promise is rejected.</li>
+      <li> new promise take one argument a function. that function takes two arugments : resolve,reject</li>
+    </ul>
+    <h2>Syntax:</h2>
+    <p>
+      const myPromise = new Promise( function(resolve,reject){<br>
+        if(true){<br>
+          resolve('successful computation of a program');<br>
+        }<br>
+        reject('not successful of computation of a program');<br>
+      } );<br>
+    </p>
+    <h2>ES6 Syntax</h2>
+    <p>new Promise((resolve,reject) => { code here });</p>
+    <div id="div"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
