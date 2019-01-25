@@ -17,19 +17,19 @@ const obj1 = function(){
 
 
 /* ES6 NEW ARROW FUNCTIONS */
-//ES6 way of writing functions | remove function keyword and after brackets add a fat arrow
+//ES6 way of writing functions | remove function keyword and after paranthesis add a fat arrow
 const sayBye = () => {
   console.log('buh-bye');
 }
 //ES6 one line function | one arrow function work without braces if its on one line
 const whatsUp = () => console.log('whatsUp!');
-//ES6 way of returning something in one line
+//ES6 way of returning something in one line | uses no return statement
 const return2 = () => 'return part two';
 //Arrow function to return an object
 const obj2 = () => {
   return {title:"two",body:"two body"};
 }
-//if single line, must place brackets around the object
+//if single line, must place brackets around the object or else brackets are mistaken for function brack
 const obj3 = () => ({title:"book three",body:"body of book three"});
 //single param does not need parenthesis
 const param = num => console.log(num+10);
@@ -86,5 +86,5 @@ function getText(){
 function getAPI(){
   fetch('https://api.github.com/users')
     .then(response => response.json())
-    .then(data => data.forEach(user => console.log(user.id)));
+    .then(data => data.forEach( user => console.log(user.id))); //ID is an object member of api response
 };
