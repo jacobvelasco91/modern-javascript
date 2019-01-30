@@ -19,7 +19,7 @@ class easyHttp {
               }
             })
             .then(data => {
-              return Promise.resolve(data);
+              return Promise.resolve(data)
             })
             .catch(err => {
               return Promise.reject(err);
