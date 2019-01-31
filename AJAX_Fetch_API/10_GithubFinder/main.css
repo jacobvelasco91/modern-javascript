@@ -1,0 +1,55 @@
+* {
+  padding:0;
+  margin:0;
+}
+.container {
+  width:80%;
+  margin:0 auto;
+}
+
+/*** HEADER ***/
+header {
+  padding:1em 0;
+  background-color: #8c14fc;
+}
+/* NAV */
+nav a {
+  color: #f1e7fe;
+  font-size:1.2em;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #f1e7fe;
+}
+/*** SECTION:container search-card ***/
+.search-card {
+  padding:1em 0 !important;
+  display:flex;
+  justify-content: center;
+}
+/* search card */
+.card {
+  width: max-content;
+  text-align: center;
+  border: 1px solid #bdc3c7;
+  padding:2em;
+}
+.card p {
+  color:#bdc3c7;
+}
+.form-control {
+  width:100%;
+}
+
+/*** FOOTER ***/
+#footer {
+  margin-top:3em;
+  border-top: 1px solid #bdc3c7;
+  border-bottom: 1px solid #bdc3c7;
+  text-align: center;
+  padding:1em 0;
+}
+#footer h6 {
+  color:#2e3131;
+  margin-bottom:0;
+}

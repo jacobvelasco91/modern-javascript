@@ -13,11 +13,23 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div id="container">
-          <a href="#">Github Finder</a>
-        </div>
-      </nav>
+      <div class="container">
+        <nav>
+            <a href="#">GitHub Finder</a>
+        </nav>
+      </div>
     </header>
+    <section class="container search-card">
+      <div class="card search">
+        <h2>Search GitHub Users</h2>
+        <p>Enter a username and fetch user profile and repos</p>
+        <input type="text" id="searchUser" class="form-control" placeholder="GitHub Username...">
+      </div>
+    </section>
+    <section id="profile"></section>
+    <footer id="footer"><h6>Github Finder &copy;</h6></footer>
+    <script src="github.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
