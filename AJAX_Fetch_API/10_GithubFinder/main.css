@@ -40,6 +40,47 @@ nav a:hover {
 .form-control {
   width:100%;
 }
+/* Alert box : found or not found */
+.profile_not_found {
+  width: 100%;
+  padding:.5em;
+  text-align: center;
+  border: 1px solid #ebcccc;
+  background-color:#f2dede;
+  color:#a94442;
+}
+.profile_found {
+  width: 100%;
+  padding:.5em;
+  text-align: center;
+  border: 1px solid #d0e9c6;
+  background-color:#dff0d8;
+  color:#3c763d;
+}
+
+/*** PROFILE ***/
+#profile {
+  display: flex;
+  padding: 2em;
+}
+.left {
+  text-align: center;
+}
+.left img {
+  width:70%;
+}
+.left div {
+  padding:.5em;
+}
+.tag {
+  display:inline-block;
+  width:max-content;
+  margin:0 .5em;
+  padding:.5em;
+  border:1px solid lightgray;
+  color:gray;
+}
+
 
 /*** FOOTER ***/
 #footer {

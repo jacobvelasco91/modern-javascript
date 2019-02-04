@@ -14,12 +14,16 @@ searchInput.addEventListener('keyup', (e) => {
     //Make Http Call
     github.getUser(username)
     .then(data => {
-      if(data.profile.message === 'Not Found'){
+      if(data.message === 'Not Found'){
         //Show UI Alert
-        console.log('profile not found');
+        ui.showAlert(false);
+        //Delete all previous profile data
+        ui.profile_section.innerHTML = '';
       } else {
-        //Display UI Profile
-        console.log(data.profile);
+        //Show UI Alert
+        ui.showAlert(true);
+        //Display profile UI
+        ui.displayProfile(data);
       }
     })
     .catch(err => console.log(err));
