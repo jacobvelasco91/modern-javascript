@@ -26,6 +26,19 @@ searchInput.addEventListener('keyup', (e) => {
         ui.displayProfile(data);
       }
     })
+    .catch(err => {
+      //Delete all previous profile data
+      ui.profile_section.innerHTML = '';
+      ui.showAlert(false);
+      console.log(err)
+    });
+
+    //Make HTTP call to get repos
+    github.getRepos(username)
+    .then(data => {
+      //show repo data
+      ui.showRepos(data);
+    })
     .catch(err => console.log(err));
   }
 });

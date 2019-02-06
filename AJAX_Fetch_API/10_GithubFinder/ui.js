@@ -30,26 +30,43 @@ class UI {
 /*** DISPLAY PROFILE ***/
   displayProfile(profile_data) {
     this.profile_section.innerHTML = `
-    <div class='left'>
-      <img src="${profile_data.avatar_url}"><br>
-      <div>
-        <a href="${profile_data.html_url}">View Profile</a>
+    <div class='left contain-profile'>
+    <div class="contain">
+      <div class="image-container">
+        <img src="${profile_data.avatar_url}">
       </div>
-      <div><span class="tag">Followers: ${profile_data.followers}</span><span class="tag">Following: ${profile_data.following}</span>
+      <div class="bio">
+        <h4>Bio:</h4>
+        <p>${profile_data.bio}</p>
       </div>
-      <p>location: ${profile_data.location}</p>
+      <div class="view-profile-container">
+        <a href="${profile_data.html_url}"><button>View Profile</button></a>
+      </div>
+      <div class="tags">
+        <span>Followers:</span><span style="color:black;">${profile_data.followers}</span>
+      </div>
+      <div class="tags">
+        <span>Following:</span><span style="color:black;">${profile_data.following}</span>
+      </div>
+      <p class="tags" style="color:gray;">location: ${profile_data.location}</p>
     </div>
-    <div class="right">
-      <div class="right-inner-top">
-       <h3>${profile_data.name}</h3>
-       <p>${profile_data.bio}</p>
-      </div>
-      <div>
-        <h4>Repos</h4>
-        <ul></ul>
-      </div>
     </div>
     `;
+  }
+/*** SHOW REPOS ***/
+  showRepos(data) { //data will be an array of repositores : need to loop through the array
+    let output = '';
+
+    //Loop through the array
+    data.forEach( (repo,index) => {
+      output += `
+       <div class="right">
+         <div><a href="${repo.html_url}">${repo.name}</a></div>
+         <div><span>Language: ${repo.language}</span><span>stargazers: ${repo.stargazers_count}</span></div>
+       </div>
+      `;
+      this.profile_section.innerHTML += output;
+    })
   }
 
 }

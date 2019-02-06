@@ -64,22 +64,44 @@ nav a:hover {
   padding: 2em;
 }
 .left {
+  border:2px solid lightgray;
+  padding:1em 0;
+}
+.contain {
+  width:80%;
+  margin:0 auto;
+}
+
+.image-container {
+  width: 75%;
+  margin:0 auto;
+}
+.image-container img {
+  width: 100%;
+}
+.bio p {
+  text-align: left;
+}
+.view-profile-container {
   text-align: center;
+  padding-bottom: .5em;
 }
-.left img {
-  width:70%;
+.view-profile-container button {
+  border-color: crimson;
 }
-.left div {
-  padding:.5em;
+.tags {
+  display:flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 0;
 }
-.tag {
-  display:inline-block;
-  width:max-content;
-  margin:0 .5em;
-  padding:.5em;
-  border:1px solid lightgray;
+.tags span {
   color:gray;
 }
+.right {
+    border:2px solid lightgray;
+}
+
 
 
 /*** FOOTER ***/
