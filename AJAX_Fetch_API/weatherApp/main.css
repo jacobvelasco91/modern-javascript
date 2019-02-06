@@ -27,7 +27,6 @@ header {
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color:lightgray;
 }
 /* WEATHER CARD */
 #weather-card {
@@ -36,6 +35,7 @@ header {
   border-radius:4px;
   background-image: linear-gradient(to top, rgba(47, 54, 64,1),rgba(47, 54, 64,0)),
                     url('./images/mountains.jpg');
+  box-shadow: 0 6px 10px rgba(0,0,0,.5);
 }
 #card-header {
   text-align: center;
